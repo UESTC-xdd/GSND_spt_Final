@@ -241,6 +241,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2861702623484422098}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 455bf83959deb3549b0a120715ef050a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766399204267757977}
   m_SourcePrefab: {fileID: 100100000, guid: 455bf83959deb3549b0a120715ef050a, type: 3}
 --- !u!1 &7454044521808568215 stripped
 GameObject:
@@ -288,7 +292,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 30
+  m_Radius: 50
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2861702623484422098
 MonoBehaviour:
@@ -321,8 +325,33 @@ MonoBehaviour:
       m_Calls: []
   OnEndInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 766399204267757977}
+        m_TargetAssemblyTypeName: QuestComp, Assembly-CSharp
+        m_MethodName: OnFinishQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ObjCol: {fileID: 5003078884984164308}
+--- !u!114 &766399204267757977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7454044521808568215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c957ca0178f233849966803adabf0a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestName: Inspect1
 --- !u!4 &7798481191332005165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,

@@ -55,10 +55,10 @@ public class InspectInteractable : IInteractable
     {
         OnEndInteract?.Invoke();
 
-        if(UIMgr.IsValid)
-        {
-            UIMgr.Instance.DialogC.StopDialog();
-        }
+        //if(UIMgr.IsValid)
+        //{
+        //    UIMgr.Instance.DialogC.StopDialog();
+        //}
 
         GameManager.Instance.PlayerInteractor.ReturnInspectObj();
         EventMgr.OnInteract -= OnEBtn;
