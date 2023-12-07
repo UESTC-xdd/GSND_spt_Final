@@ -30,8 +30,8 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        LevelMgr.Instance.OnSceneLoadedAction -= OnSceneLoaded;
-        LevelMgr.Instance.OnSceneLoadedAction += OnSceneLoaded;
+        //LevelMgr.Instance.OnSceneLoadedAction -= OnSceneLoaded;
+        //LevelMgr.Instance.OnSceneLoadedAction += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene toScene)

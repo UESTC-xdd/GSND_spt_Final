@@ -33,21 +33,21 @@ public class FPInteractor : MonoBehaviour
                     {
                         CurInteractable = interactable;
                         CurInteractable.CanInteract = true;
-                        UIMgr.Instance.CenterPoint.SetHandEnabled(true);
+                        //UIMgr.Instance.CenterPoint.SetHandEnabled(true);
                     }
                     else
                     {
                         if (CurInteractable == interactable)
                         {
                             CurInteractable.CanInteract = true;
-                            UIMgr.Instance.CenterPoint.SetHandEnabled(true);
+                            //UIMgr.Instance.CenterPoint.SetHandEnabled(true);
                         }
                         else
                         {
                             CurInteractable.CanInteract = false;
                             CurInteractable = interactable;
                             CurInteractable.CanInteract = true;
-                            UIMgr.Instance.CenterPoint.SetHandEnabled(true);
+                            //UIMgr.Instance.CenterPoint.SetHandEnabled(true);
                         }
                     }
                 }
@@ -69,12 +69,14 @@ public class FPInteractor : MonoBehaviour
         {
             CurInteractable.CanInteract = false;
             CurInteractable = null;
-            UIMgr.Instance.CenterPoint.SetHandEnabled(false);
+            //UIMgr.Instance.CenterPoint.SetHandEnabled(false);
         }
     }
 
     public void OnInteract()
     {
+        Debug.Log("½»»¥");
+
         EventMgr.OnInteract?.Invoke();
         if (CurInteractable != null && CurInteractable.CanInteract)
         {
@@ -91,6 +93,17 @@ public class FPInteractor : MonoBehaviour
         curInspectObjTrans.SetParent(InspectPos);
         curInspectObjTrans.DOLocalMove(Vector3.zero, 0.5f);
         curInspectObjTrans.DOLocalRotateQuaternion(Quaternion.identity, 0.5f);
+    }
+
+    public void InspectObj(Transform curInspectObjTrans,Vector3 localPos,Vector3 localRot)
+    {
+        CurInspectObjTrans = curInspectObjTrans;
+        CurInspectObjOriginPos = curInspectObjTrans.position;
+        CurInspectObjOriginRot = curInspectObjTrans.rotation;
+
+        curInspectObjTrans.SetParent(InspectPos);
+        curInspectObjTrans.DOLocalMove(localPos, 0.5f);
+        curInspectObjTrans.DOLocalRotateQuaternion(Quaternion.Euler(localRot), 0.5f);
     }
 
     public void ReturnInspectObj()

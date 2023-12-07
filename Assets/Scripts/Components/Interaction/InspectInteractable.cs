@@ -7,7 +7,10 @@ using UnityEngine.Events;
 public class InspectInteractable : IInteractable
 {
     public Transform RealTrans;
-    public bool IsInspecting { get; set; }
+    public bool IsInspecting;
+
+    public Vector3 InspectLocalPos;
+    public Vector3 InspectLocalRot;
 
     public DialogueLine DialogLine;
     public DialogType CurDialogType;
@@ -15,25 +18,52 @@ public class InspectInteractable : IInteractable
     public UnityEvent OnBeginInteract;
     public UnityEvent OnEndInteract;
 
+    [Header("Reference")]
+    public Collider ObjCol;
+
     public override void OnInteract()
     {
         base.OnInteract();
-        Interactable = false;
-        GameManager.Instance.PlayerInteractor.InspectObj(RealTrans);
-        UIMgr.Instance.DialogC.StartDialogue(DialogLine, CurDialogType);
 
-        OnBeginInteract?.Invoke();
+        if (!IsInspecting)
+        {
+            Debug.Log("Inspect");
 
-        EventMgr.OnInteract -= OnEBtn;
-        EventMgr.OnInteract += OnEBtn;
+            Interactable = false;
+            GameManager.Instance.PlayerInteractor.InspectObj(RealTrans, InspectLocalPos, InspectLocalRot);
+
+            if (DialogLine.sentence != string.Empty)
+            {
+                UIMgr.Instance.DialogC.StartDialogue(DialogLine, CurDialogType);
+            }
+
+            OnBeginInteract?.Invoke();
+
+            EventMgr.OnInteract -= OnEBtn;
+            EventMgr.OnInteract += OnEBtn;
+
+            IsInspecting = true;
+            ObjCol.enabled = false;
+        }
+        else
+        {
+            OnEBtn();
+        }
     }
 
     private void OnEBtn()
     {
         OnEndInteract?.Invoke();
-        UIMgr.Instance.DialogC.StopDialog();
+
+        if(UIMgr.IsValid)
+        {
+            UIMgr.Instance.DialogC.StopDialog();
+        }
+
         GameManager.Instance.PlayerInteractor.ReturnInspectObj();
         EventMgr.OnInteract -= OnEBtn;
         Interactable = true;
+        IsInspecting = false;
+        ObjCol.enabled = true;
     }
 }

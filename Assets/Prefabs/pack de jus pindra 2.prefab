@@ -179,6 +179,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   RealTrans: {fileID: 3370282538367232101}
+  IsInspecting: 0
+  InspectLocalPos: {x: 0, y: 0.035, z: 0.014}
+  InspectLocalRot: {x: 336.01392, y: 47.203026, z: 336.13065}
   DialogLine:
     name: 
     sentence: 
@@ -190,6 +193,7 @@ MonoBehaviour:
   OnEndInteract:
     m_PersistentCalls:
       m_Calls: []
+  ObjCol: {fileID: 4390832417661127768}
 --- !u!65 &4390832417661127768
 BoxCollider:
   m_ObjectHideFlags: 0
