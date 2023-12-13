@@ -32,6 +32,9 @@ public class GameManager : Singleton<GameManager>
     {
         //LevelMgr.Instance.OnSceneLoadedAction -= OnSceneLoaded;
         //LevelMgr.Instance.OnSceneLoadedAction += OnSceneLoaded;
+
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     private void OnSceneLoaded(Scene toScene)

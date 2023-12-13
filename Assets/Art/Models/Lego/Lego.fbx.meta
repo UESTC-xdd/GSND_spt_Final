@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 0aa6ffd6e9b05c1409a3375c88d1bfe3
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Figure_Arm_Mat
+    second: {fileID: 2100000, guid: bf331c7b65afa9f499287569d571e159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Figure_Body_Mat
+    second: {fileID: 2100000, guid: 1852cc85375caba429e8851edb028d49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Figure_Hair_Mat
+    second: {fileID: 2100000, guid: 1cc741a45b59ad343ab908a8d4cc789a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Figure_Hand_Mat
+    second: {fileID: 2100000, guid: 38e012937954cd64883d95147e0e62bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Figure_Head_Mat
+    second: {fileID: 2100000, guid: 74555829a713f5940a3650e4dbfbc1a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Figure_Leg_Mat
+    second: {fileID: 2100000, guid: 7da7d9dbc9566454284a474e29229139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Figure_Pelvis_Mat
+    second: {fileID: 2100000, guid: f5c0b36262ceefd42b4386f11176c00c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistol_Mat
+    second: {fileID: 2100000, guid: c6f04d60087342b4aaa653c02970d6ef, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Arm_MatSG_BaseColor
+    second: {fileID: 2800000, guid: 51bdaf53209960d44b57073cc6fabac0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Arm_MatSG_Metalness
+    second: {fileID: 2800000, guid: 04321fdf709242841adeb63b83f24eb3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Arm_MatSG_Normal
+    second: {fileID: 2800000, guid: 4adb588087ac8c9469755ed8a4515a10, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Arm_MatSG_Roughness
+    second: {fileID: 2800000, guid: 064d5082efdcfe649980e9fda2de9a90, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Body_MatSG_BaseColor
+    second: {fileID: 2800000, guid: 73774afa2b8334d4d98655e867073206, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Body_MatSG_Metalness
+    second: {fileID: 2800000, guid: cea05e2ebf453bd43b76c161a861bc1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Body_MatSG_Normal
+    second: {fileID: 2800000, guid: 26b17e260d8b3cd4d990afbb65a979ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Body_MatSG_Roughness
+    second: {fileID: 2800000, guid: c2b6ecef9b400fb4bb605021f894325d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Hair_MatSG_BaseColor
+    second: {fileID: 2800000, guid: 2efca5d0de416f740b75846b3583f6e4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Hair_MatSG_Metalness
+    second: {fileID: 2800000, guid: 8516639f27d9da54ba36af81b096c96d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Hair_MatSG_Normal
+    second: {fileID: 2800000, guid: d17e16488d96c254a8e296ce3a90f2e7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Hand_MatSG_BaseColor
+    second: {fileID: 2800000, guid: a4d2d0fe34bdfb24696558811137cca2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Hand_MatSG_Metalness
+    second: {fileID: 2800000, guid: dcb445efa5e79d94a8b127904052742f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Hand_MatSG_Normal
+    second: {fileID: 2800000, guid: a055492394c16b24baeb3ce1577ddc79, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Hand_MatSG_Roughness
+    second: {fileID: 2800000, guid: b813d170ed96a9746ba5d255ca9210fc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Head_MatSG_BaseColor
+    second: {fileID: 2800000, guid: fb7f8460c1d053f4c8e4c2382793484f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Head_MatSG_Metalness
+    second: {fileID: 2800000, guid: b42a045be061abc44b5b6c42ebe2c097, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Head_MatSG_Normal
+    second: {fileID: 2800000, guid: f54a8b18eaff5604584c2d282150a358, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Head_MatSG_Roughness
+    second: {fileID: 2800000, guid: 6034f9585be6b6e4cabd0017a34dda2f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Leg_MatSG_BaseColor
+    second: {fileID: 2800000, guid: 5cfcda0dc29c0364abcac5138017daea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Leg_MatSG_Metalness
+    second: {fileID: 2800000, guid: 695ef0f178e0fa64fbed3da7ac3aec1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Leg_MatSG_Normal
+    second: {fileID: 2800000, guid: 66e82559477276343ac8e938974e4871, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Leg_MatSG_Roughness
+    second: {fileID: 2800000, guid: 347e956539e4ce94fa1de61a45564a42, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Pelvis_MatSG_BaseColor
+    second: {fileID: 2800000, guid: 4e7c0b422c5b3a9438427b29baee90a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Pelvis_MatSG_Metalness
+    second: {fileID: 2800000, guid: 34b30397cb351c14bad1ec01490663a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Pelvis_MatSG_Normal
+    second: {fileID: 2800000, guid: 43f4cc5a7ead29d4ebd3b3fe9d8f9d12, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Figure_Pelvis_MatSG_Roughness
+    second: {fileID: 2800000, guid: 4e1830af284675d4e970d6632558115b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Pistol_MatSG_BaseColor
+    second: {fileID: 2800000, guid: d7931b94a9ffd3b4db8179b67496c8b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Pistol_MatSG_Metalness
+    second: {fileID: 2800000, guid: 57c8e4aa0ba123b4593936b3b9eb3b42, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Pistol_MatSG_Normal
+    second: {fileID: 2800000, guid: 54e300222d28557419891c71bd156fc2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LegoFigure_Pistol_MatSG_Roughness
+    second: {fileID: 2800000, guid: dccc2c4518824ae46966867d3c324753, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.19999999
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

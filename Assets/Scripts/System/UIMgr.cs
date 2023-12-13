@@ -12,6 +12,7 @@ public class UIMgr : Singleton<UIMgr>
     public UI_MovieBG MovieBG;
     public UI_CenterPoint CenterPoint;
     public DialogueController DialogC;
+    public UI_Options Options;
 
     private void Start()
     {
@@ -60,5 +61,17 @@ public class UIMgr : Singleton<UIMgr>
         {
             control.SetActive(true);
         }
+    }
+
+    public void EnterOptions()
+    {
+        Options.gameObject.SetActive(true);
+        CenterPoint.gameObject.SetActive(false);
+    }
+
+    public void QuitOptions()
+    {
+        Options.gameObject.SetActive(false);
+        CenterPoint.gameObject.SetActive(true);
     }
 }
