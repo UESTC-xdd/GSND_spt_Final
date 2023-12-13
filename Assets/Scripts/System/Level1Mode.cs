@@ -31,9 +31,9 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         QuestMgr.Instance.OnQuestFinished -= OnQuestFinish;
         QuestMgr.Instance.OnQuestFinished += OnQuestFinish;
 
-        UIMgr.Instance.EnterOptions();
-        UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
-        CurOptionsIndex++;
+        //UIMgr.Instance.EnterOptions();
+        //UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
+        //CurOptionsIndex++;
         UIMgr.Instance.Options.OnOptionClicked -= OnGetOption;
         UIMgr.Instance.Options.OnOptionClicked += OnGetOption;
     }

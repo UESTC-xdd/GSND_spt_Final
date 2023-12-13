@@ -33,21 +33,21 @@ public class FPInteractor : MonoBehaviour
                     {
                         CurInteractable = interactable;
                         CurInteractable.CanInteract = true;
-                        //UIMgr.Instance.CenterPoint.SetHandEnabled(true);
+                        UIMgr.Instance.CenterPoint.SetHandEnabled(true);
                     }
                     else
                     {
                         if (CurInteractable == interactable)
                         {
                             CurInteractable.CanInteract = true;
-                            //UIMgr.Instance.CenterPoint.SetHandEnabled(true);
+                            UIMgr.Instance.CenterPoint.SetHandEnabled(true);
                         }
                         else
                         {
                             CurInteractable.CanInteract = false;
                             CurInteractable = interactable;
                             CurInteractable.CanInteract = true;
-                            //UIMgr.Instance.CenterPoint.SetHandEnabled(true);
+                            UIMgr.Instance.CenterPoint.SetHandEnabled(true);
                         }
                     }
                 }
@@ -69,7 +69,7 @@ public class FPInteractor : MonoBehaviour
         {
             CurInteractable.CanInteract = false;
             CurInteractable = null;
-            //UIMgr.Instance.CenterPoint.SetHandEnabled(false);
+            UIMgr.Instance.CenterPoint.SetHandEnabled(false);
         }
     }
 
