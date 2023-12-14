@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
+using UnityEngine.Video;
 
 public class Level1Mode : LevelSingleton<Level1Mode>
 {
@@ -65,9 +66,12 @@ public class Level1Mode : LevelSingleton<Level1Mode>
     public List<Options> CallingOptions = new List<Options>();
     private int CurOptionsIndex = 0;
 
+    public VideoClip CreditVideo;
+
     [Header("Reference")]
     public PlayableDirector m_Director;
     public AudioSource m_Source;
+    public VideoPlayer CreditVideoPlayer;
 
     private GameObject[] CurNeedToHideBeforeRewindObjs;
     private GameObject[] CurNeedToHideAfterRewindObjs;
@@ -512,5 +516,10 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         }
 
         Debug.Log("Chosed " + optionIndex);
+    }
+
+    public void CreditsScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }
