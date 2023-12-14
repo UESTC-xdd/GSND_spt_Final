@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 577261597386797058}
   - component: {fileID: 7682830778125676967}
   - component: {fileID: 4125443741895316723}
+  - component: {fileID: 4795734625361373145}
   m_Layer: 0
   m_Name: Level1Mode
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3779079667838268300}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,23 +48,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RewindTime: 15
+  BeginCallClip: {fileID: 8300000, guid: 81bce395de1bc4040b6634e21b2fc027, type: 3}
+  EndCallClip: {fileID: 8300000, guid: 9bd606f307e55a04190c4982594b00ba, type: 3}
+  AmbientSources:
+  - {fileID: 0}
+  InteractableObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   TLAsset1: {fileID: 11400000, guid: adbcc10abec30c64db4a82b97ad10414, type: 2}
-  TLAsset1NeedToHideBeforeRewindObjs: []
+  TLAsset1NeedToHideBeforeRewindObjs:
+  - {fileID: 0}
   TLAsset1NeedToHideAfterRewindObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  TLAsset2: {fileID: 11400000, guid: 63cf1fbf35e70b640a67dc22ec43ac14, type: 2}
+  TLAsset2NeedToHideBeforeRewindObjs: []
+  TLAsset2NeedToHideAfterRewindObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  TLAsset3: {fileID: 11400000, guid: 8a7856a837c0b7b4e95b5b070f8e8dfb, type: 2}
+  TLAsset3NeedToHideBeforeRewindObjs: []
+  TLAsset3NeedToHideAfterRewindObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  TLAsset4: {fileID: 11400000, guid: bb7eda73d7879cf4886ebc470ceafdf9, type: 2}
+  TLAsset4NeedToHideBeforeRewindObjs: []
+  TLAsset4NeedToHideAfterRewindObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  TLAsset5: {fileID: 11400000, guid: 2eef1bfe079ec6d459c3f4d51cb9086d, type: 2}
+  TLAsset5NeedToHideBeforeRewindObjs: []
+  TLAsset5NeedToHideAfterRewindObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  TLAsset6: {fileID: 11400000, guid: e3ea590d72d40c9468ff1b6c62973b00, type: 2}
+  TLAsset6NeedToHideBeforeRewindObjs: []
+  TLAsset6NeedToHideAfterRewindObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  TLAsset7: {fileID: 11400000, guid: 16ebe99306e0d4f4181453c95875cd86, type: 2}
+  TLAsset7NeedToHideBeforeRewindObjs: []
+  TLAsset7NeedToHideAfterRewindObjs:
   - {fileID: 0}
   - {fileID: 0}
   CallingOptions:
   - OptionDatas:
-    - OptionContent: Kidnapped
-      OptionAvailable: 1
-    - OptionContent: Didn't go home
+    - OptionContent: Report Kidnapped
+      OptionAvailable: 0
+    - OptionContent: Report Kid Didn't come home
       OptionAvailable: 1
   - OptionDatas:
-    - OptionContent: My brother
+    - OptionContent: It's probably a  kidnap
       OptionAvailable: 0
-    - OptionContent: I don't know
+    - OptionContent: That's all I know
+      OptionAvailable: 1
+  - OptionDatas:
+    - OptionContent: I think my brother did it
+      OptionAvailable: 0
+    - OptionContent: I think the kidnapper is aiming for money
+      OptionAvailable: 0
+    - OptionContent: That's all I know
+      OptionAvailable: 1
+  - OptionDatas:
+    - OptionContent: '"I know where he is"'
+      OptionAvailable: 0
+    - OptionContent: That's all I know
+      OptionAvailable: 1
+  - OptionDatas:
+    - OptionContent: I know why you are doing this
+      OptionAvailable: 0
+    - OptionContent: Don't you hurt my son!
+      OptionAvailable: 1
+    - OptionContent: Please leve my son alone. I beg you!
       OptionAvailable: 1
   m_Director: {fileID: 7682830778125676967}
+  m_Source: {fileID: 4795734625361373145}
 --- !u!320 &7682830778125676967
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -73,7 +137,7 @@ PlayableDirector:
   m_GameObject: {fileID: 3779079667838268300}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: adbcc10abec30c64db4a82b97ad10414, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 16ebe99306e0d4f4181453c95875cd86, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -88,6 +152,44 @@ PlayableDirector:
   - key: {fileID: -4604279685350795682, guid: adbcc10abec30c64db4a82b97ad10414, type: 2}
     value: {fileID: 0}
   - key: {fileID: -609327132041434820, guid: adbcc10abec30c64db4a82b97ad10414, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1796673187629742332, guid: 63cf1fbf35e70b640a67dc22ec43ac14, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3861830879912271280, guid: 63cf1fbf35e70b640a67dc22ec43ac14, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 337099275788703232, guid: 8a7856a837c0b7b4e95b5b070f8e8dfb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6324200093173592501, guid: 8a7856a837c0b7b4e95b5b070f8e8dfb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3907441488930450267, guid: bb7eda73d7879cf4886ebc470ceafdf9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5633915191852462566, guid: bb7eda73d7879cf4886ebc470ceafdf9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2461962856337125169, guid: 2eef1bfe079ec6d459c3f4d51cb9086d, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7453169577833369335, guid: 2eef1bfe079ec6d459c3f4d51cb9086d, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3222518557963965473, guid: e3ea590d72d40c9468ff1b6c62973b00, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4691505951369296087, guid: e3ea590d72d40c9468ff1b6c62973b00, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7030355622636350542, guid: 16ebe99306e0d4f4181453c95875cd86, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6708503261375474406, guid: 16ebe99306e0d4f4181453c95875cd86, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8169948820747108165, guid: 63cf1fbf35e70b640a67dc22ec43ac14, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -996815406712107970, guid: 8a7856a837c0b7b4e95b5b070f8e8dfb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6317957867200634921, guid: bb7eda73d7879cf4886ebc470ceafdf9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1472482007597324292, guid: bb7eda73d7879cf4886ebc470ceafdf9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3380959710283807423, guid: 2eef1bfe079ec6d459c3f4d51cb9086d, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2185239688102725503, guid: e3ea590d72d40c9468ff1b6c62973b00, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2285189391482284610, guid: 16ebe99306e0d4f4181453c95875cd86, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
@@ -121,3 +223,99 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!82 &4795734625361373145
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779079667838268300}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
