@@ -13,6 +13,7 @@ public class UIMgr : Singleton<UIMgr>
     public UI_CenterPoint CenterPoint;
     public DialogueController DialogC;
     public UI_Options Options;
+    public GameObject ConfirmPanel;
 
     private void Start()
     {

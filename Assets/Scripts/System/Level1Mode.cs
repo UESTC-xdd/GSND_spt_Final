@@ -217,6 +217,17 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         EnableAllInteractable();
     }
 
+    public void StartSettle()
+    {
+        StartCoroutine(SettleCou());
+    }
+
+    private IEnumerator SettleCou()
+    {
+        UIMgr.Instance.BG.FadeIn(2, Color.black);
+        yield return new WaitUntil(() => UIMgr.Instance.BG.IsDone);
+    }
+
     private void OnGetOption(int optionIndex)
     {
         switch (CurOptionsIndex)

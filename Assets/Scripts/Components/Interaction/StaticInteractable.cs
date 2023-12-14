@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class StaticInteractable : IInteractable
 {
-    public CanvasGroup ExitGroup;
+    public CanvasGroup IconGroup;
 
     private Tween m_GroupTween;
 
@@ -13,32 +13,29 @@ public class StaticInteractable : IInteractable
     {
         base.OnPlayerEnterTrigger();
 
-        if (m_GroupTween!=null)
+        if(IconGroup)
         {
-            m_GroupTween.Kill();
+            if (m_GroupTween != null)
+            {
+                m_GroupTween.Kill();
+            }
+            IconGroup.alpha = 0;
+            m_GroupTween = IconGroup.DOFade(1, 0.5f);
         }
-        ExitGroup.alpha = 0;
-        m_GroupTween = ExitGroup.DOFade(1, 0.5f);
     }
 
     protected override void OnPlayerExitTrigger()
     {
         base.OnPlayerExitTrigger();
 
-        if(m_GroupTween != null)
-        {
-            m_GroupTween.Kill();
-        }
-        ExitGroup.alpha = 1;
-        m_GroupTween = ExitGroup.DOFade(0, 0.5f);
-    }
-
-    public override void OnInteract()
-    {
-        base.OnInteract();
-        if(IsPlayerInRange)
-        {
-
+        if (IconGroup)
+        {   
+            if (m_GroupTween != null)
+            {
+                m_GroupTween.Kill();
+            }
+            IconGroup.alpha = 1;
+            m_GroupTween = IconGroup.DOFade(0, 0.5f);
         }
     }
 }
