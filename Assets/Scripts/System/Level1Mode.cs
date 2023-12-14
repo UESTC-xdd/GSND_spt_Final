@@ -9,6 +9,8 @@ public class Level1Mode : LevelSingleton<Level1Mode>
 {
     public float RewindTime;
 
+    public AudioClip GameStartClip;
+
     [Header("Settle Audio")]
     public AudioClip BeginCallClip;
     public AudioClip EndCallClip;
@@ -55,6 +57,8 @@ public class Level1Mode : LevelSingleton<Level1Mode>
     public GameObject[] TLAsset7NeedToHideAfterRewindObjs;
     private bool Q7Finish;
 
+    public bool OpenedSafety;
+
     [Header("OptionSetUp")]
     public List<Options> CallingOptions = new List<Options>();
     private int CurOptionsIndex = 0;
@@ -75,6 +79,22 @@ public class Level1Mode : LevelSingleton<Level1Mode>
 
         UIMgr.Instance.Options.OnOptionClicked -= OnGetOption;
         UIMgr.Instance.Options.OnOptionClicked += OnGetOption;
+
+        StartCoroutine(GameStartCou());
+    }
+
+    private IEnumerator GameStartCou()
+    {
+        PauseAmbientSound();
+        UIMgr.Instance.BG.FadeIn(0, Color.black);
+        GameManager.Instance.Input.enabled = false;
+
+        m_Source.PlayOneShot(GameStartClip);
+        yield return new WaitUntil(() => !m_Source.isPlaying);
+
+        UIMgr.Instance.BG.FadeOut(1);
+        GameManager.Instance.Input.enabled = true;
+        PlayAmbientSound();
     }
 
     public void EnableAllInteractable()
@@ -258,6 +278,11 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         if(Q1Finish && Q2Finish && Q3Finish && Q4Finish && Q5Finish && Q6Finish && Q7Finish)
         {
             CallingOptions[3].OptionDatas[0].OptionAvailable = true;
+        }
+
+        if(OpenedSafety)
+        {
+            CallingOptions[4].OptionDatas[0].OptionAvailable = true;
         }
 
         StartCoroutine(SettleCou());

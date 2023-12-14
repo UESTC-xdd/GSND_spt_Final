@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RewindTime: 15
+  GameStartClip: {fileID: 8300000, guid: 66045fe57af3a6b4b930b2702cd161a0, type: 3}
   BeginCallClip: {fileID: 8300000, guid: 81bce395de1bc4040b6634e21b2fc027, type: 3}
   EndCallClip: {fileID: 8300000, guid: 9bd606f307e55a04190c4982594b00ba, type: 3}
   AmbientSources:
@@ -96,6 +97,7 @@ MonoBehaviour:
   TLAsset7NeedToHideAfterRewindObjs:
   - {fileID: 0}
   - {fileID: 0}
+  OpenedSafety: 0
   CallingOptions:
   - OptionDatas:
     - OptionContent: Report Kidnapped

@@ -99,12 +99,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.052398022
+      value: 0.05239803
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.052398022
+      value: 0.05239803
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,
         type: 3}
@@ -114,12 +114,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.198
+      value: -54.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.196
+      value: 0.1960001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,
         type: 3}
@@ -311,10 +311,16 @@ MonoBehaviour:
   InteractEvt:
     m_PersistentCalls:
       m_Calls: []
+  OnPlayerTriggerEnterEvt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerTriggerExitEvt:
+    m_PersistentCalls:
+      m_Calls: []
   RealTrans: {fileID: 7798481191332005165}
   IsInspecting: 0
   InspectLocalPos: {x: 0, y: 0.188, z: 0.012}
-  InspectLocalRot: {x: 273.71188, y: 0.030625055, z: 0.0022819822}
+  InspectLocalRot: {x: 86.03478, y: 206.17639, z: 26.37955}
   DialogLine:
     name: 
     sentence: 

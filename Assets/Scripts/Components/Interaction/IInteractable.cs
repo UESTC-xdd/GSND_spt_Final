@@ -34,7 +34,6 @@ public class IInteractable : MonoBehaviour
 
     public virtual void OnInteract()
     {
-        Debug.Log("Interact: " + gameObject.name);
         InteractEvt?.Invoke();
         if (InteractOnce)
         {
