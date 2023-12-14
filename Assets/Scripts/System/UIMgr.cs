@@ -14,6 +14,7 @@ public class UIMgr : Singleton<UIMgr>
     public DialogueController DialogC;
     public UI_Options Options;
     public GameObject ConfirmPanel;
+    public UI_Ending Ending;
 
     private void Start()
     {

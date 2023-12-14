@@ -12,7 +12,10 @@ public class UI_Options : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        foreach(var Btn in Btns)
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        foreach (var Btn in Btns)
         {
             Btn.gameObject.SetActive(false);
         }

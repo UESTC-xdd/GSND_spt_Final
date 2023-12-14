@@ -48,9 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RewindTime: 15
-  GameStartClip: {fileID: 8300000, guid: 66045fe57af3a6b4b930b2702cd161a0, type: 3}
+  GameStartClip: {fileID: 8300000, guid: 5bed018a7c22f4f4ab63b1cd5393320a, type: 3}
   BeginCallClip: {fileID: 8300000, guid: 81bce395de1bc4040b6634e21b2fc027, type: 3}
   EndCallClip: {fileID: 8300000, guid: 9bd606f307e55a04190c4982594b00ba, type: 3}
+  Clip_Answer:
+  - {fileID: 8300000, guid: 6c18d23780b3cf54ba6ae9cc6e3e6b63, type: 3}
+  - {fileID: 8300000, guid: 694ca97ffc60ba848ae9ce7fe3837658, type: 3}
+  - {fileID: 8300000, guid: 41e8d60336c690f439218777b0e3c0b9, type: 3}
+  - {fileID: 8300000, guid: e99ea24dd05d64b419271c3875f3a82e, type: 3}
   AmbientSources:
   - {fileID: 0}
   InteractableObjects:
@@ -100,12 +105,12 @@ MonoBehaviour:
   OpenedSafety: 0
   CallingOptions:
   - OptionDatas:
-    - OptionContent: Report Kidnapped
+    - OptionContent: Report my kid is missing
       OptionAvailable: 0
-    - OptionContent: Report Kid Didn't come home
+    - OptionContent: Report kid didn't come home
       OptionAvailable: 1
   - OptionDatas:
-    - OptionContent: It's probably a  kidnap
+    - OptionContent: It's probably a kidnap
       OptionAvailable: 0
     - OptionContent: That's all I know
       OptionAvailable: 1
@@ -126,7 +131,16 @@ MonoBehaviour:
       OptionAvailable: 0
     - OptionContent: Don't you hurt my son!
       OptionAvailable: 1
-    - OptionContent: Please leve my son alone. I beg you!
+    - OptionContent: Please don't hurt my son. I'm begging you!
+      OptionAvailable: 1
+  - OptionDatas:
+    - OptionContent: This is all my fault, I am so sorry.
+      OptionAvailable: 1
+  - OptionDatas:
+    - OptionContent: I keep blaming myself these years.
+      OptionAvailable: 1
+  - OptionDatas:
+    - OptionContent: You see, I keep these evidence in my home.
       OptionAvailable: 1
   m_Director: {fileID: 7682830778125676967}
   m_Source: {fileID: 4795734625361373145}

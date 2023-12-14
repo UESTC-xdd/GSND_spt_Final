@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 public class Level1Mode : LevelSingleton<Level1Mode>
@@ -14,6 +15,7 @@ public class Level1Mode : LevelSingleton<Level1Mode>
     [Header("Settle Audio")]
     public AudioClip BeginCallClip;
     public AudioClip EndCallClip;
+    public AudioClip[] Clip_Answer;
 
     [Header("Ambient Sound")]
     public AudioSource[] AmbientSources;
@@ -81,6 +83,12 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         UIMgr.Instance.Options.OnOptionClicked += OnGetOption;
 
         StartCoroutine(GameStartCou());
+    }
+
+    public void Replay()
+    {
+        UIMgr.Instance.Ending.gameObject.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator GameStartCou()
@@ -253,6 +261,28 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         EnableAllInteractable();
     }
 
+    [ContextMenu("Set all quest finished")]
+    public void SetSettleAvailable()
+    {
+        CallingOptions[0].OptionDatas[0].OptionAvailable = true;
+        CallingOptions[1].OptionDatas[0].OptionAvailable = true;
+        CallingOptions[2].OptionDatas[0].OptionAvailable = true;
+        CallingOptions[2].OptionDatas[1].OptionAvailable = true;
+        CallingOptions[3].OptionDatas[0].OptionAvailable = true;
+        CallingOptions[4].OptionDatas[0].OptionAvailable = true;
+    }
+
+    [ContextMenu("Reset Settle Aval")]
+    public void ResetSettle()
+    {
+        CallingOptions[0].OptionDatas[0].OptionAvailable = false;
+        CallingOptions[1].OptionDatas[0].OptionAvailable = false;
+        CallingOptions[2].OptionDatas[0].OptionAvailable = false;
+        CallingOptions[2].OptionDatas[1].OptionAvailable = false;
+        CallingOptions[3].OptionDatas[0].OptionAvailable = false;
+        CallingOptions[4].OptionDatas[0].OptionAvailable = false;
+    }
+
     public void StartSettle()
     {
         if(Q1Finish || Q2Finish || Q3Finish || Q4Finish || Q5Finish || Q6Finish || Q7Finish)
@@ -304,10 +334,38 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         CurOptionsIndex++;
     }
 
-    private IEnumerator StopCallCou()
+    private IEnumerator StopCallCou(int endingIndex)
     {
         m_Source.PlayOneShot(EndCallClip);
         yield return new WaitUntil(() => !m_Source.isPlaying);
+
+        UIMgr.Instance.Ending.ShowEnding(endingIndex);
+    }
+
+    private IEnumerator AnswerCallCou()
+    {
+        m_Source.PlayOneShot(Clip_Answer[UnityEngine.Random.Range(0, Clip_Answer.Length)]);
+        yield return new WaitUntil(() => !m_Source.isPlaying);
+
+        UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
+        CurOptionsIndex++;
+    }
+
+    private IEnumerator ConfrontationCou()
+    {
+        m_Source.PlayOneShot(EndCallClip);
+        yield return new WaitUntil(() => !m_Source.isPlaying);
+
+        UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
+        CurOptionsIndex++;
+    }
+
+    private IEnumerator WinCou(int endingIndex)
+    {
+        m_Source.PlayOneShot(EndCallClip);
+        yield return new WaitUntil(() => !m_Source.isPlaying);
+
+        UIMgr.Instance.Ending.ShowEnding(endingIndex);
     }
 
     private void OnGetOption(int optionIndex)
@@ -323,14 +381,14 @@ public class Level1Mode : LevelSingleton<Level1Mode>
                     {
                         case 0:
                             {
-                                UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
-                                CurOptionsIndex++;
+                                UIMgr.Instance.QuitOptions();
+                                StartCoroutine(AnswerCallCou());
                                 break;
                             }
                         case 1:
                             {
                                 UIMgr.Instance.QuitOptions();
-                                StartCoroutine(StopCallCou());
+                                StartCoroutine(StopCallCou(0));
                                 break;
                             }
                         default:
@@ -344,14 +402,14 @@ public class Level1Mode : LevelSingleton<Level1Mode>
                     {
                         case 0:
                             {
-                                UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
-                                CurOptionsIndex++;
+                                UIMgr.Instance.QuitOptions();
+                                StartCoroutine(AnswerCallCou());
                                 break;
                             }
                         case 1:
                             {
                                 UIMgr.Instance.QuitOptions();
-                                StartCoroutine(StopCallCou());
+                                StartCoroutine(StopCallCou(0));
                                 break;
                             }
                         default:
@@ -365,21 +423,20 @@ public class Level1Mode : LevelSingleton<Level1Mode>
                     {
                         case 0:
                             {
-                                UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
-                                CurOptionsIndex++;
-
+                                UIMgr.Instance.QuitOptions();
+                                StartCoroutine(AnswerCallCou());
                                 break;
                             }
                         case 1:
                             {
                                 UIMgr.Instance.QuitOptions();
-                                StartCoroutine(StopCallCou());
+                                StartCoroutine(StopCallCou(1));
                                 break;
                             }
                         case 2:
                             {
                                 UIMgr.Instance.QuitOptions();
-                                StartCoroutine(StopCallCou());
+                                StartCoroutine(StopCallCou(1));
                                 break;
                             }
                         default:
@@ -393,15 +450,14 @@ public class Level1Mode : LevelSingleton<Level1Mode>
                     {
                         case 0:
                             {
-                                UIMgr.Instance.Options.SetUpOptions(CallingOptions[CurOptionsIndex]);
-                                CurOptionsIndex++;
-                                StartCoroutine(StopCallCou());
+                                UIMgr.Instance.QuitOptions();
+                                StartCoroutine(ConfrontationCou());
                                 break;
                             }
                         case 1:
                             {
                                 UIMgr.Instance.QuitOptions();
-                                StartCoroutine(StopCallCou());
+                                StartCoroutine(StopCallCou(2));
                                 break;
                             }
                         default:
@@ -422,11 +478,28 @@ public class Level1Mode : LevelSingleton<Level1Mode>
                         case 1:
                             {
                                 UIMgr.Instance.QuitOptions();
+                                StartCoroutine(StopCallCou(3));
                                 break;
                             }
                         case 2:
                             {
                                 UIMgr.Instance.QuitOptions();
+                                StartCoroutine(StopCallCou(3));
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                    break;
+                }
+            case 6:
+                {
+                    switch (optionIndex)
+                    {
+                        case 0:
+                            {
+                                UIMgr.Instance.QuitOptions();
+                                StartCoroutine(WinCou(4));
                                 break;
                             }
                         default:
