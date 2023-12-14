@@ -76,4 +76,10 @@ public class UIMgr : Singleton<UIMgr>
         Options.gameObject.SetActive(false);
         CenterPoint.gameObject.SetActive(true);
     }
+
+    public void Credit()
+    {
+        UIMgr.Instance.gameObject.SetActive(false);
+        Level1Mode.Instance.CreditsScene();
+    }
 }
