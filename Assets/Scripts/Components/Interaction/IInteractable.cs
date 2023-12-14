@@ -8,6 +8,8 @@ public class IInteractable : MonoBehaviour
     public bool Interactable;
     public bool InteractOnce;
     public UnityEvent InteractEvt;
+    public UnityEvent OnPlayerTriggerEnterEvt;
+    public UnityEvent OnPlayerTriggerExitEvt;
 
     public bool CanInteract { get; set; }
     public bool IsPlayerInRange { get; set; }
@@ -17,7 +19,7 @@ public class IInteractable : MonoBehaviour
         if (other.transform.root.CompareTag("Player"))
         {
             IsPlayerInRange = true;
-
+            OnPlayerEnterTrigger();
         }
     }
 
@@ -26,7 +28,7 @@ public class IInteractable : MonoBehaviour
         if (other.transform.root.CompareTag("Player"))
         {
             IsPlayerInRange = false;
-
+            OnPlayerExitTrigger();
         }
     }
 
@@ -39,5 +41,15 @@ public class IInteractable : MonoBehaviour
             Interactable = false;
             IsPlayerInRange = false;
         }
+    }
+
+    protected virtual void OnPlayerEnterTrigger()
+    {
+        OnPlayerTriggerEnterEvt?.Invoke();
+    }
+
+    protected virtual void OnPlayerExitTrigger()
+    {
+        OnPlayerTriggerExitEvt?.Invoke();
     }
 }

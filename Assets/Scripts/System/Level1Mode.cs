@@ -9,6 +9,9 @@ public class Level1Mode : LevelSingleton<Level1Mode>
 {
     public float RewindTime;
 
+    [Header("Ambient Sound")]
+    public AudioSource[] AmbientSources;
+
     [Header("InteractableObjects")]
     public InspectInteractable[] InteractableObjects;
 
@@ -81,6 +84,22 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         }
     }
 
+    public void PauseAmbientSound()
+    {
+        foreach (var source in AmbientSources)
+        {
+            source.Pause();
+        }
+    }
+
+    public void PlayAmbientSound()
+    {
+        foreach (var source in AmbientSources)
+        {
+            source.Play();
+        }
+    }
+
     private void OnQuestFinish(Quest finishedQuest)
     {
         switch (finishedQuest.QuestName)
@@ -139,6 +158,7 @@ public class Level1Mode : LevelSingleton<Level1Mode>
     {
         UIMgr.Instance.BG.FadeIn(1, Color.black);
         yield return new WaitUntil(() => UIMgr.Instance.BG.IsDone);
+        PauseAmbientSound();
 
         foreach (var obj in CurNeedToHideBeforeRewindObjs)
         {
@@ -193,6 +213,7 @@ public class Level1Mode : LevelSingleton<Level1Mode>
 
         CurRewindIndex++;
 
+        PlayAmbientSound();
         EnableAllInteractable();
     }
 
