@@ -14,6 +14,22 @@ public class Level1Mode : LevelSingleton<Level1Mode>
     public GameObject[] TLAsset1NeedToHideBeforeRewindObjs;
     public GameObject[] TLAsset1NeedToHideAfterRewindObjs;
 
+    public TimelineAsset TLAsset2;
+    public GameObject[] TLAsset2NeedToHideBeforeRewindObjs;
+    public GameObject[] TLAsset2NeedToHideAfterRewindObjs;
+
+    public TimelineAsset TLAsset3;
+    public GameObject[] TLAsset3NeedToHideBeforeRewindObjs;
+    public GameObject[] TLAsset3NeedToHideAfterRewindObjs;
+
+    public TimelineAsset TLAsset4;
+    public GameObject[] TLAsset4NeedToHideBeforeRewindObjs;
+    public GameObject[] TLAsset4NeedToHideAfterRewindObjs;
+
+    public TimelineAsset TLAsset5;
+    public GameObject[] TLAsset5NeedToHideBeforeRewindObjs;
+    public GameObject[] TLAsset5NeedToHideAfterRewindObjs;
+
     [Header("OptionSetUp")]
     public List<Options> CallingOptions = new List<Options>();
     private int CurOptionsIndex = 0;
@@ -47,6 +63,26 @@ public class Level1Mode : LevelSingleton<Level1Mode>
                     OnStartDialog(TLAsset1, TLAsset1NeedToHideBeforeRewindObjs, TLAsset1NeedToHideAfterRewindObjs);
                     break;
                 }
+            case "Inspect2":
+                {
+                    OnStartDialog(TLAsset2, TLAsset2NeedToHideBeforeRewindObjs, TLAsset2NeedToHideAfterRewindObjs);
+                    break;
+                }
+            case "Inspect3":
+                {
+                    OnStartDialog(TLAsset3, TLAsset3NeedToHideBeforeRewindObjs, TLAsset3NeedToHideAfterRewindObjs);
+                    break;
+                }
+            case "Inspect4":
+                {
+                    OnStartDialog(TLAsset4, TLAsset4NeedToHideBeforeRewindObjs, TLAsset4NeedToHideAfterRewindObjs);
+                    break;
+                }
+            case "Inspect5":
+                {
+                    OnStartDialog(TLAsset5, TLAsset5NeedToHideBeforeRewindObjs, TLAsset5NeedToHideAfterRewindObjs);
+                    break;
+                }
             default:
                 break;
         }
@@ -62,7 +98,7 @@ public class Level1Mode : LevelSingleton<Level1Mode>
 
     public IEnumerator StartDialogCou()
     {
-        UIMgr.Instance.BG.FadeIn(2, Color.black);
+        UIMgr.Instance.BG.FadeIn(1, Color.black);
         yield return new WaitUntil(() => UIMgr.Instance.BG.IsDone);
 
         foreach (var obj in CurNeedToHideBeforeRewindObjs)
