@@ -308,4 +308,21 @@ MonoBehaviour:
   - QuestName: Inspect1
     QuestComps:
     - {fileID: 0}
+  - QuestName: Inspect2
+    QuestComps:
+    - {fileID: 0}
+  - QuestName: Inspect3
+    QuestComps:
+    - {fileID: 0}
+  - QuestName: Inspect4
+    QuestComps:
+    - {fileID: 0}
+  - QuestName: Inspect5
+    QuestComps:
+    - {fileID: 0}
+  - QuestName: Inspect6
+    QuestComps:
+    - {fileID: 0}
+  - QuestName: Inspect7
+    QuestComps:
     - {fileID: 0}

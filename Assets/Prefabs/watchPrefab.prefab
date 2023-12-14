@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c957ca0178f233849966803adabf0a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QuestName: Inspect1
+  QuestName: Inspect4
 --- !u!4 &7798481191332005165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 455bf83959deb3549b0a120715ef050a,

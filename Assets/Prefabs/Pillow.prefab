@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 36244881290723428}
   - component: {fileID: 2706378224655297371}
   - component: {fileID: 201592901926638128}
+  - component: {fileID: 3332489958140729129}
   m_Layer: 0
   m_Name: Pillow
   m_TagString: Untagged
@@ -29,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025333394214617687}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7299443, y: 0.030595195, z: 0.08343677, w: 0.67770463}
+  m_LocalRotation: {x: -0.7299457, y: 0.030595038, z: 0.083440594, w: 0.6777026}
   m_LocalPosition: {x: -43.4, y: 0.163, z: -20.317}
   m_LocalScale: {x: 50.612305, y: 38.099865, z: 9.027364}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -96.024, y: 49.960007, z: -40.69702}
 --- !u!33 &2059971319888049279
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -159,5 +160,30 @@ MonoBehaviour:
       m_Calls: []
   OnEndInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3332489958140729129}
+        m_TargetAssemblyTypeName: QuestComp, Assembly-CSharp
+        m_MethodName: OnFinishQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ObjCol: {fileID: 36244881290723428}
+--- !u!114 &3332489958140729129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025333394214617687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c957ca0178f233849966803adabf0a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestName: Inspect6

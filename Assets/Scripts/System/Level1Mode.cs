@@ -9,6 +9,9 @@ public class Level1Mode : LevelSingleton<Level1Mode>
 {
     public float RewindTime;
 
+    [Header("InteractableObjects")]
+    public InspectInteractable[] InteractableObjects;
+
     [Header("Inspect1")]
     public TimelineAsset TLAsset1;
     public GameObject[] TLAsset1NeedToHideBeforeRewindObjs;
@@ -62,6 +65,22 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         UIMgr.Instance.Options.OnOptionClicked += OnGetOption;
     }
 
+    public void EnableAllInteractable()
+    {
+        foreach (var inter in InteractableObjects)
+        {
+            inter.Interactable = true;
+        }
+    }
+
+    public void DisableAllInteractable()
+    {
+        foreach (var inter in InteractableObjects)
+        {
+            inter.Interactable = false;
+        }
+    }
+
     private void OnQuestFinish(Quest finishedQuest)
     {
         switch (finishedQuest.QuestName)
@@ -111,6 +130,8 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         CurNeedToHideBeforeRewindObjs = NeedToHideBeforeRewindObjs;
         CurNeedToHideAfterRewindObjs = NeedToHideAfterRewindObjs;
         m_Director.playableAsset = timelineAsset;
+
+        DisableAllInteractable();
         StartCoroutine(StartDialogCou());
     }
 
@@ -171,6 +192,8 @@ public class Level1Mode : LevelSingleton<Level1Mode>
         }
 
         CurRewindIndex++;
+
+        EnableAllInteractable();
     }
 
     private void OnGetOption(int optionIndex)
