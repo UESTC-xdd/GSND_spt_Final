@@ -30,6 +30,14 @@ public class Level1Mode : LevelSingleton<Level1Mode>
     public GameObject[] TLAsset5NeedToHideBeforeRewindObjs;
     public GameObject[] TLAsset5NeedToHideAfterRewindObjs;
 
+    public TimelineAsset TLAsset6;
+    public GameObject[] TLAsset6NeedToHideBeforeRewindObjs;
+    public GameObject[] TLAsset6NeedToHideAfterRewindObjs;
+
+    public TimelineAsset TLAsset7;
+    public GameObject[] TLAsset7NeedToHideBeforeRewindObjs;
+    public GameObject[] TLAsset7NeedToHideAfterRewindObjs;
+
     [Header("OptionSetUp")]
     public List<Options> CallingOptions = new List<Options>();
     private int CurOptionsIndex = 0;
@@ -81,6 +89,16 @@ public class Level1Mode : LevelSingleton<Level1Mode>
             case "Inspect5":
                 {
                     OnStartDialog(TLAsset5, TLAsset5NeedToHideBeforeRewindObjs, TLAsset5NeedToHideAfterRewindObjs);
+                    break;
+                }
+            case "Inspect6":
+                {
+                    OnStartDialog(TLAsset6, TLAsset6NeedToHideBeforeRewindObjs, TLAsset6NeedToHideAfterRewindObjs);
+                    break;
+                }
+            case "Inspect7":
+                {
+                    OnStartDialog(TLAsset7, TLAsset7NeedToHideBeforeRewindObjs, TLAsset7NeedToHideAfterRewindObjs);
                     break;
                 }
             default:
