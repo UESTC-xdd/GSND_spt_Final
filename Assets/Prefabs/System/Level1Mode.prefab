@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RewindTime: 15
   GameStartClip: {fileID: 8300000, guid: 5bed018a7c22f4f4ab63b1cd5393320a, type: 3}
+  WinGameClip: {fileID: 8300000, guid: 26f64e330b382174a8f6a897da3c01e3, type: 3}
   BeginCallClip: {fileID: 8300000, guid: 81bce395de1bc4040b6634e21b2fc027, type: 3}
   EndCallClip: {fileID: 8300000, guid: 9bd606f307e55a04190c4982594b00ba, type: 3}
   Clip_Answer:
@@ -142,8 +143,10 @@ MonoBehaviour:
   - OptionDatas:
     - OptionContent: You see, I keep these evidence in my home.
       OptionAvailable: 1
+  CreditVideo: {fileID: 0}
   m_Director: {fileID: 7682830778125676967}
   m_Source: {fileID: 4795734625361373145}
+  CreditVideoPlayer: {fileID: 0}
 --- !u!320 &7682830778125676967
 PlayableDirector:
   m_ObjectHideFlags: 0

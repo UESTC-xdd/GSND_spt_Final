@@ -12,6 +12,7 @@ public class Level1Mode : LevelSingleton<Level1Mode>
     public float RewindTime;
 
     public AudioClip GameStartClip;
+    public AudioClip WinGameClip;
 
     [Header("Settle Audio")]
     public AudioClip BeginCallClip;
@@ -366,7 +367,7 @@ public class Level1Mode : LevelSingleton<Level1Mode>
 
     private IEnumerator WinCou(int endingIndex)
     {
-        m_Source.PlayOneShot(EndCallClip);
+        m_Source.PlayOneShot(WinGameClip);
         yield return new WaitUntil(() => !m_Source.isPlaying);
 
         UIMgr.Instance.Ending.ShowEnding(endingIndex);
